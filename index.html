@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon (2).ico" type="image/x-icon" />
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body class="bg-black text-white">
+    <div class="flex">
+      <div
+        id="left2"
+        class="m-2 z-20 duration-500 absolute w-[98%] bg-black left-[-100%] h-[97vh] z-10 sm:w-[50%] lg:w-[25vw] lg:relative lg:left-0"
+      >
+        <div
+          class="home h-[22vh] relative bg-[#121212] rounded-[14px] min-h-[180px]"
+        >
+          <div class="logo flex p-4">
+            <img src="logo.svg" />
+            <img
+              id="cross"
+              class="absolute top-5 right-4 block lg:hidden"
+              src="./img/cross.svg"
+            />
+          </div>
+          <ul>
+            <li class="flex p-4 gap-3 cursor-pointer text-slate-300 hover:text-white">
+              <img src="home.svg" />
+              <h1 class="text-xl">Home</h1>
+            </li>
+            <li class="flex p-4 cursor-pointer gap-3 text-slate-300 hover:text-white">
+              <img src="search.svg" />
+              <h1 class="text-xl">Search</h1>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="library1 h-[73vh] items-start relative w-full flex justify-between rounded-[14px] mt-4 p-4 bg-[#121212]"
+        >
+          <div class="flex gap-3">
+            <img src="library.svg" />
+            <p class="text-2xl">Your Library</p>
+          </div>
+          <div
+            id="librarycon"
+            class="flex overflow-y-auto top-[70px] left-3 scrollbar scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#282828] h-[55vh] flex-col absolute w-[95%]"
+          ></div>
+          <div class="absolute left-8 text-xs bottom-1 bg-[#121212]">
+            <ul class="flex flex-wrap flex-row justify-evenly">
+              <li class="m-1 text-xs">Legal</li>
+              <li class="m-1 text-xs">Safety & Privacy Center</li>
+              <li class="m-1 text-xs">Privacy Policy</li>
+              <li class="m-1 text-xs">Cookies</li>
+            </ul>
+          </div>
+          <img src="plus.svg" />
+        </div>
+      </div>
+      <div
+        class="right relative w-[98%] h-[97vh] m-2 rounded-[14px] bg-[#121212] lg:w-[75vw]"
+      >
+        <div class="header bg-[rgba(0,0,0,0.5)] flex justify-between">
+          <div class="p-2 nav flex">
+            <img
+              src="./img/hamburger.svg "
+              id="ham"
+              class="block w-[20px] cursor-pointer lg:hidden w-[24px]"
+            />
+          </div>
+          <div class="buttons flex">
+            <button
+              class="signup cursor-pointer mt-[4px] text-md text-slate-300 w-[80px] hover:text-white"
+            >
+              Sign up
+            </button>
+            <button
+              class="login cursor-pointer bg-white text-md text-bold mt-3 mr-4 mb-3 text-black w-[100px] h-[40px] rounded-[25px] hover:font-bold"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+        <div class="spotify-playlist">
+          <h1 class="text-2xl font-bold m-5">Spotify Playlists</h1>
+          <div
+            class="cardContainer z-[-1] duration-500 flex flex-row flex-wrap justify-evenly overflow-y-auto scrollbar scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#282828] max-h-[75vh]"
+          >
+          
+          <div
+            id="playbar"
+            class="playbar h-[150px] z-10 hidden  flex rounded-[14px] justify-center gap-8 absolute inset-x-0  md:h-[70px] w-[100%] bottom-0 bg-gray-500 md:h-[80px]"
+          >
+            <div
+              class="seekbar  absolute top-[7px] bg-green-500 max-w-[98%] w-[98%] rounded-[14px] h-[7px]"
+            >
+              <div class="circle w-[99%] relative top-[2px]">
+                <img
+                  id="circle"
+                  src="./img/circle.svg"
+                  class="w-[20px] cursor-pointer absolute top-[-9px] left-[0%]"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="songInfo absolute bottom-1 left-3 flex flex-row sm:flex-col ">
+              <p id="NAME"></p>
+              <p class="sm:hidden"> - </p>
+              <p  id="ARTIST"></p>
+            </div>
+            <img
+              class="pt-5 w-[25px] cursor-pointer sm:w-[50px] "
+              id="prev"
+              src="left-playbar.svg"
+              alt=""
+            />
+            <img
+              class="pt-5 w-[25px] cursor-pointer sm:w-[50px] "
+              id="play"
+              src="play.svg"
+              alt=""
+            />
+            <img
+              class="pt-5 w-[25px] cursor-pointer sm:w-[50px] "
+              id="next"
+              src="right-playbar.svg"
+              alt=""
+            />
+            <div class="timestamp  absolute flex top-6 right-4">
+              <div id="current-time"></div>
+              <p id="separator"></p>
+              <div id="duration" class="songTimes mr-1"></div>
+              <img id="volsign"  src="volume.svg" class="mr-1 cursor-pointer" alt="" />
+              <br />
+              <input
+                id="range"
+                type="range"
+                class="cursor-pointer"
+                class="w-[80px]"
+                min="0"
+                max="100"
+                value="100"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
